@@ -1,0 +1,163 @@
+--------------------------------------------------------------------------------------
+
+Oleksandr Kononov - 23/02/2016
+-Created the Driver, User, Board and HareCards classes.
+-In the User class
+	-> Created parameters: carrots, lettuce, position, place.
+	-> Created constructor and set intial default values for parameters.
+	-> Created getters and setters (accessors and mutators) for each parameter.
+	-> Created toString method to send out a String for future "status" command.
+
+--------------------------------------------------------------------------------------
+
+Oleksandr Kononov - 24/02/2016 - 13:07
+-In the Board class
+	->Created the ArrayList for squares.
+	->Created a private method startingSquares which will 
+	  need to be filled with Strings for the effects.
+	  (use the picture of the board on facebook for reference).
+
+--------------------------------------------------------------------------------------
+
+Oleksandr Kononov - 24/02/2016 - 21:12
+-In the Board class
+	->Completed adding the squares to the ArrayList
+-In the Driver class
+	->Created the mainMenuDisplay method which shows main menu options and 
+	  takes input from the user.
+	->Created the mainMenu method which processes the input of the user and directs 
+	  the user to the need method.
+
+--------------------------------------------------------------------------------------
+
+Oleksandr Kononov - 25/02/2016 - 11:50
+-In the Driver class
+	->Created the carrotCalculation method to calculate the carrot cost 
+	  for any input (moves) that the user inputs.
+	->Managed exception handling for the mainMenu method.
+-In the Board class
+	->Created occupySquare and removeOccupiedSquare methods, so that only one 
+	  user may occupy as single square at any given time.
+
+--------------------------------------------------------------------------------------
+
+Jake Phillips - 25/02/2016 - 14:22
+-In the HareCard class
+	->Added the 7 card effects to the cards array.
+
+--------------------------------------------------------------------------------------
+
+Jake Phillips - 03/03/2016 - 14:00
+-In the Board class
+	->Added two methods, one to return a boolean to check squareOccupied, the other
+	  to return string from occupiedSquare.
+	->Made it so that the occupied array had the proper size of the board on initialisation.
+In the Hare class
+	->Created a method to randomly select a hare card and return an integer for the index.
+In the Game class
+	->Filled out the moveForward method, it is now complete.
+In the Driver class
+	->Made a method to check the occupied squares effect and execute it (not fully complete!)
+	->Made it so square effects dont execute unless you move, by using an if statement to check
+	  if you have moved or not.
+
+--------------------------------------------------------------------------------------
+
+Oleksandr Kononov - 06/03/2016 - 18:50
+-In the Driver class
+	->Filled in some of the checkNewSquare method which Jake started earlier,
+	  It's still not complete, case 0 needs to be fixed.
+-In the Game class
+	->Here I basically changed the "map" command, the original plan was for it to 
+	  show you a table/grid of carrot to movement cost.
+	  But I made it so you can type in "Whats the cost to move 5 squares" and it'll give you the
+	  carrot cost. The key-word here is "cost" instead of "map".
+
+--------------------------------------------------------------------------------------
+
+Oleksandr Kononov - 06/03/2016 - 19:40
+
+-In the Driver class 
+	->Finished the hare cards switch statement.
+
+--------------------------------------------------------------------------------------
+
+Oleksandr Kononov - 07/03/2016 - 17:30
+
+-In the Game class
+	->In the checkNewSquare method I made it so the lettuce squares work.
+	->I made the board command in the displayBoard method work.
+-In the Board class
+	->I added spaces to the squares String in the array (for the board command)
+
+	:::::::WE REMOVED THE HARECARDS CLASS SINCE IT'S NO LONGER OF USE!:::::::
+
+--------------------------------------------------------------------------------------
+
+Jake Phillips - 07/03/2016
+
+-In the Game class
+	->Edited the movementForward method by moving addOccupied above the setPlayerPosition.
+	->Added in the calculateUserPlace into the displayUserStatus method.
+	->Added the calculateUserPlace method to find the place (1st,2nd...) of the user.
+-In the Board class
+	->Changed the checkOccupied method.
+
+--------------------------------------------------------------------------------------
+
+Nigel Farrell - 07/03/2016 - 17:30
+
+-In the Game class
+        -> Case 0 hard card updated as it wouldnt work with 2 players. Can be updated by determining places of the user.
+        -> Added content of the hare class to the game class and delted the hareClass.
+
+--------------------------------------------------------------------------------------
+
+Oleksandr Kononov - 07/03/2016 - 21:00
+
+-In the Board class
+	->Changed the addOccupied method by changing occupied.add() to occupied.set() <<<BUG FIXED!!!
+-In the Game class
+	->Added the Carrot square functionality to the checkSquare method.
+	->Bug fixed the movementForward method to not respond to zero integers
+	->Placed Jake's userPlaceCalculation method in the moveForward method.
+	->Finished the movementStay method (not really much to do there).
+
+-------------------------------------------------------------------------------------
+
+
+Nigel Farrell 08/03/2016 - 16:00
+
+ - In the Game class
+         -> Added a method to move backwards to the nearest tortoise.
+            when you move backwards to a tortoise square you recieve the number
+            of carrots you recieved x10. Tested and working correctly.
+
+-------------------------------------------------------------------------------------
+
+
+Nigel Farrell 10/03/2016 - 14:20
+
+ - In the Game class
+          -> Improved the code in case 0 and tested it for 2 players.
+           
+-------------------------------------------------------------------------------------
+
+Oleksandr Kononov - 10/03/2016 - 16:30
+
+-In the Game class
+	->Made it so the displayBoard method displays the whole board and 
+	  all the players on it (+ showing where you are)
+In the Driver class
+	->Added the calculateUserPlace method at the beginning and end of for loop
+
+------------------------------------------------------------------------------------
+
+Oleksandr Kononov - 10/03/2016 - 22:00
+
+-In the Game class
+	->Fixed a bug in displayBoard method where it didn't show all the users on the board.
+-In the Driver class
+	->Fixed a bug where users places (relative to others) wasn't calculated straight after movement.
+
+------------------------------------------------------------------------------------
